@@ -53,24 +53,17 @@ x-airflow-common:
   # build: .
   environment:
     &airflow-common-env
-<<<<<<< HEAD
     # 대한민국/서울 시간대로 조정 #################################
     TZ: 'Asia/Seoul'
     AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: 'Asia/Seoul'
     ###########################################################
-=======
->>>>>>> a0a6e65a931f2162e313a2382be6d0a42477ea94
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-<<<<<<< HEAD
     AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
-=======
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
->>>>>>> a0a6e65a931f2162e313a2382be6d0a42477ea94
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
@@ -79,15 +72,11 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
-<<<<<<< HEAD
     
     # 추가 패키지 설치 : mysql, ...
     #_PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-} apache-airflow-providers-mysql apache-airflow-providers-amazon
 
-=======
-    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
->>>>>>> a0a6e65a931f2162e313a2382be6d0a42477ea94
     # The following line can be used to set a custom config file, stored in the local config folder
     # If you want to use it, outcomment it and replace airflow.cfg with the name of your config file
     # AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
@@ -303,7 +292,6 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
-<<<<<<< HEAD
   # mysql 서비스 추가
   mysql:
     image: mysql:8.0
@@ -326,18 +314,14 @@ services:
 
   # fastapi 서버 추가
   ai-api-server:
-    build: ./api_server
+    build:  ./api_server  # 해당 폴더 하위에  Dockerfile을 참고하여 이미지 생성->컨테이너구성
     container_name: airflow-class-api
     ports:
       - "8000:8000"
     networks:
       - default
-       
+
 volumes:
   postgres-db-volume:
   # mysql용 볼륨 -> 도커 엔진 내부에 공간 할당
   mysql-db-volume:
-=======
-volumes:
-  postgres-db-volume:
->>>>>>> a0a6e65a931f2162e313a2382be6d0a42477ea94
