@@ -1,0 +1,50 @@
+[2026-04-13T09:58:19.185+0900] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-13T09:58:19.198+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 05_mysql_etl.create_table manual__2026-04-13T00:58:18.110421+00:00 [queued]>
+[2026-04-13T09:58:19.204+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 05_mysql_etl.create_table manual__2026-04-13T00:58:18.110421+00:00 [queued]>
+[2026-04-13T09:58:19.205+0900] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-04-13T09:58:19.216+0900] {taskinstance.py:2879} INFO - Executing <Task(SQLExecuteQueryOperator): create_table> on 2026-04-13 00:58:18.110421+00:00
+[2026-04-13T09:58:19.221+0900] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1003) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-13T09:58:19.223+0900] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '05_mysql_etl', 'create_table', 'manual__2026-04-13T00:58:18.110421+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/05_mysql_etl.py', '--cfg-path', '/tmp/tmp9t7s5dth']
+[2026-04-13T09:58:19.224+0900] {standard_task_runner.py:72} INFO - Started process 1005 to run task
+[2026-04-13T09:58:19.224+0900] {standard_task_runner.py:105} INFO - Job 42: Subtask create_table
+[2026-04-13T09:58:19.264+0900] {task_command.py:467} INFO - Running <TaskInstance: 05_mysql_etl.create_table manual__2026-04-13T00:58:18.110421+00:00 [running]> on host 52b82e78b0f3
+[2026-04-13T09:58:19.321+0900] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='de_2team_manager' AIRFLOW_CTX_DAG_ID='05_mysql_etl' AIRFLOW_CTX_TASK_ID='create_table' AIRFLOW_CTX_EXECUTION_DATE='2026-04-13T00:58:18.110421+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-13T00:58:18.110421+00:00'
+[2026-04-13T09:58:19.322+0900] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-04-13T09:58:19.323+0900] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-04-13T09:58:19.324+0900] {logging_mixin.py:190} INFO - Current task name:create_table state:running start_date:2026-04-13 00:58:19.199539+00:00
+[2026-04-13T09:58:19.324+0900] {logging_mixin.py:190} INFO - Dag name:05_mysql_etl and current dag run status:running
+[2026-04-13T09:58:19.325+0900] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-13T09:58:19.326+0900] {sql.py:282} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS sensor_readings (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                sensor_id VARCHAR(50),
+                timestamp DATETIME,
+                temperature_c FLOAT,
+                temperature_f FLOAT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        
+[2026-04-13T09:58:19.333+0900] {base.py:84} INFO - Retrieving connection 'mysql_default'
+[2026-04-13T09:58:19.339+0900] {base.py:84} INFO - Retrieving connection 'mysql_default'
+[2026-04-13T09:58:19.346+0900] {sql.py:509} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS sensor_readings (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                sensor_id VARCHAR(50),
+                timestamp DATETIME,
+                temperature_c FLOAT,
+                temperature_f FLOAT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        , parameters: None
+[2026-04-13T09:58:19.351+0900] {sql.py:518} INFO - Rows affected: 0
+[2026-04-13T09:58:19.358+0900] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-13T09:58:19.359+0900] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=05_mysql_etl, task_id=create_table, run_id=manual__2026-04-13T00:58:18.110421+00:00, execution_date=20260413T005818, start_date=20260413T005819, end_date=20260413T005819
+[2026-04-13T09:58:19.366+0900] {logging_mixin.py:190} INFO - Task instance in success state
+[2026-04-13T09:58:19.367+0900] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2026-04-13T09:58:19.368+0900] {logging_mixin.py:190} INFO - Dag name:05_mysql_etl queued_at:2026-04-13 00:58:18.127645+00:00
+[2026-04-13T09:58:19.369+0900] {logging_mixin.py:190} INFO - Task hostname:52b82e78b0f3 operator:SQLExecuteQueryOperator
+[2026-04-13T09:58:19.399+0900] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-04-13T09:58:19.415+0900] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-13T09:58:19.417+0900] {local_task_job_runner.py:240} INFO - ::endgroup::

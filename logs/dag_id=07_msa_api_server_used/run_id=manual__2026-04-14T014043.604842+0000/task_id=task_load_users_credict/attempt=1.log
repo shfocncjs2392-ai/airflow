@@ -1,0 +1,22 @@
+[2026-04-14T10:40:45.989+0900] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-14T10:40:46.003+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 07_msa_api_server_used.task_load_users_credict manual__2026-04-14T01:40:43.604842+00:00 [queued]>
+[2026-04-14T10:40:46.009+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 07_msa_api_server_used.task_load_users_credict manual__2026-04-14T01:40:43.604842+00:00 [queued]>
+[2026-04-14T10:40:46.010+0900] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-04-14T10:40:46.021+0900] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_load_users_credict> on 2026-04-14 01:40:43.604842+00:00
+[2026-04-14T10:40:46.026+0900] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=15421) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-14T10:40:46.028+0900] {standard_task_runner.py:72} INFO - Started process 15422 to run task
+[2026-04-14T10:40:46.027+0900] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '07_msa_api_server_used', 'task_load_users_credict', 'manual__2026-04-14T01:40:43.604842+00:00', '--job-id', '109', '--raw', '--subdir', 'DAGS_FOLDER/07_msa_api_server_used.py', '--cfg-path', '/tmp/tmpap5glkt5']
+[2026-04-14T10:40:46.028+0900] {standard_task_runner.py:105} INFO - Job 109: Subtask task_load_users_credict
+[2026-04-14T10:40:46.067+0900] {task_command.py:467} INFO - Running <TaskInstance: 07_msa_api_server_used.task_load_users_credict manual__2026-04-14T01:40:43.604842+00:00 [running]> on host ad48662a813c
+[2026-04-14T10:40:46.131+0900] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='YONG' AIRFLOW_CTX_DAG_ID='07_msa_api_server_used' AIRFLOW_CTX_TASK_ID='task_load_users_credict' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T01:40:43.604842+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T01:40:43.604842+00:00'
+[2026-04-14T10:40:46.132+0900] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-14T10:40:46.157+0900] {base.py:84} INFO - Retrieving connection 'mysql_default'
+[2026-04-14T10:40:46.170+0900] {logging_mixin.py:190} INFO - Loaded 3 rows to MySQL.
+[2026-04-14T10:40:46.171+0900] {python.py:240} INFO - Done. Returned value was: None
+[2026-04-14T10:40:46.179+0900] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-14T10:40:46.180+0900] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=07_msa_api_server_used, task_id=task_load_users_credict, run_id=manual__2026-04-14T01:40:43.604842+00:00, execution_date=20260414T014043, start_date=20260414T014046, end_date=20260414T014046
+[2026-04-14T10:40:46.203+0900] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-04-14T10:40:46.215+0900] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-14T10:40:46.217+0900] {local_task_job_runner.py:240} INFO - ::endgroup::

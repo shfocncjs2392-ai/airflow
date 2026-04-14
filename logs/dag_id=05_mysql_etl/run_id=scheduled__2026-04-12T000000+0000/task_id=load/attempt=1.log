@@ -1,0 +1,29 @@
+[2026-04-13T09:09:56.529+0900] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-13T09:09:56.541+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 05_mysql_etl.load scheduled__2026-04-12T00:00:00+00:00 [queued]>
+[2026-04-13T09:09:56.547+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 05_mysql_etl.load scheduled__2026-04-12T00:00:00+00:00 [queued]>
+[2026-04-13T09:09:56.548+0900] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-04-13T09:09:56.562+0900] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): load> on 2026-04-12 00:00:00+00:00
+[2026-04-13T09:09:56.568+0900] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=344) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-13T09:09:56.569+0900] {standard_task_runner.py:72} INFO - Started process 346 to run task
+[2026-04-13T09:09:56.570+0900] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '05_mysql_etl', 'load', 'scheduled__2026-04-12T00:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/05_mysql_etl.py', '--cfg-path', '/tmp/tmp_cyze_2r']
+[2026-04-13T09:09:56.571+0900] {standard_task_runner.py:105} INFO - Job 37: Subtask load
+[2026-04-13T09:09:56.608+0900] {task_command.py:467} INFO - Running <TaskInstance: 05_mysql_etl.load scheduled__2026-04-12T00:00:00+00:00 [running]> on host 52b82e78b0f3
+[2026-04-13T09:09:56.658+0900] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='de_2team_manager' AIRFLOW_CTX_DAG_ID='05_mysql_etl' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2026-04-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-12T00:00:00+00:00'
+[2026-04-13T09:09:56.660+0900] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-04-13T09:09:56.661+0900] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-04-13T09:09:56.661+0900] {logging_mixin.py:190} INFO - Current task name:load state:running start_date:2026-04-13 00:09:56.542185+00:00
+[2026-04-13T09:09:56.661+0900] {logging_mixin.py:190} INFO - Dag name:05_mysql_etl and current dag run status:running
+[2026-04-13T09:09:56.662+0900] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-13T09:09:56.669+0900] {base.py:84} INFO - Retrieving connection 'mysql_default'
+[2026-04-13T09:09:56.676+0900] {python.py:240} INFO - Done. Returned value was: None
+[2026-04-13T09:09:56.683+0900] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-13T09:09:56.684+0900] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=05_mysql_etl, task_id=load, run_id=scheduled__2026-04-12T00:00:00+00:00, execution_date=20260412T000000, start_date=20260413T000956, end_date=20260413T000956
+[2026-04-13T09:09:56.692+0900] {logging_mixin.py:190} INFO - Task instance in success state
+[2026-04-13T09:09:56.693+0900] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2026-04-13T09:09:56.693+0900] {logging_mixin.py:190} INFO - Dag name:05_mysql_etl queued_at:2026-04-13 00:09:51.196675+00:00
+[2026-04-13T09:09:56.694+0900] {logging_mixin.py:190} INFO - Task hostname:52b82e78b0f3 operator:PythonOperator
+[2026-04-13T09:09:56.705+0900] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-04-13T09:09:56.718+0900] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-13T09:09:56.720+0900] {local_task_job_runner.py:240} INFO - ::endgroup::

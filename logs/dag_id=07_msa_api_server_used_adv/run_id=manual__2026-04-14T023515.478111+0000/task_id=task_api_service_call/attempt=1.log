@@ -1,0 +1,21 @@
+[2026-04-14T11:35:16.745+0900] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-14T11:35:16.760+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 07_msa_api_server_used_adv.task_api_service_call manual__2026-04-14T02:35:15.478111+00:00 [queued]>
+[2026-04-14T11:35:16.766+0900] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 07_msa_api_server_used_adv.task_api_service_call manual__2026-04-14T02:35:15.478111+00:00 [queued]>
+[2026-04-14T11:35:16.767+0900] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-04-14T11:35:16.778+0900] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_api_service_call> on 2026-04-14 02:35:15.478111+00:00
+[2026-04-14T11:35:16.783+0900] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=16172) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-04-14T11:35:16.785+0900] {standard_task_runner.py:72} INFO - Started process 16176 to run task
+[2026-04-14T11:35:16.788+0900] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', '07_msa_api_server_used_adv', 'task_api_service_call', 'manual__2026-04-14T02:35:15.478111+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/07_msa_api_server_used_adv.py', '--cfg-path', '/tmp/tmpmpg2s5gl']
+[2026-04-14T11:35:16.789+0900] {standard_task_runner.py:105} INFO - Job 121: Subtask task_api_service_call
+[2026-04-14T11:35:16.828+0900] {task_command.py:467} INFO - Running <TaskInstance: 07_msa_api_server_used_adv.task_api_service_call manual__2026-04-14T02:35:15.478111+00:00 [running]> on host ad48662a813c
+[2026-04-14T11:35:16.898+0900] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='YONG' AIRFLOW_CTX_DAG_ID='07_msa_api_server_used_adv' AIRFLOW_CTX_TASK_ID='task_api_service_call' AIRFLOW_CTX_EXECUTION_DATE='2026-04-14T02:35:15.478111+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-14T02:35:15.478111+00:00'
+[2026-04-14T11:35:16.899+0900] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-14T11:35:16.922+0900] {07_msa_api_server_used_adv.py:96} INFO - 요청시 전달 데이터 None
+[2026-04-14T11:35:16.935+0900] {07_msa_api_server_used_adv.py:107} INFO - 신용 평가 결과 획득 {'detail': [{'type': 'missing', 'loc': ['body'], 'msg': 'Field required', 'input': None}]}
+[2026-04-14T11:35:16.935+0900] {python.py:240} INFO - Done. Returned value was: {'detail': [{'type': 'missing', 'loc': ['body'], 'msg': 'Field required', 'input': None}]}
+[2026-04-14T11:35:16.955+0900] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-14T11:35:16.956+0900] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=07_msa_api_server_used_adv, task_id=task_api_service_call, run_id=manual__2026-04-14T02:35:15.478111+00:00, execution_date=20260414T023515, start_date=20260414T023516, end_date=20260414T023516
+[2026-04-14T11:35:17.000+0900] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-04-14T11:35:17.007+0900] {local_task_job_runner.py:240} INFO - ::endgroup::

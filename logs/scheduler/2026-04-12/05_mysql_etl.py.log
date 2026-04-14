@@ -1,0 +1,53 @@
+[2026-04-13T08:56:51.548+0900] {processor.py:186} INFO - Started process (PID=78) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:56:51.549+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:56:51.554+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.553+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:56:51.611+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:56:51.764+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.764+0900] {override.py:1858} INFO - Created Permission View: can delete on DAG:05_mysql_etl
+[2026-04-13T08:56:51.777+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.776+0900] {override.py:1858} INFO - Created Permission View: can edit on DAG:05_mysql_etl
+[2026-04-13T08:56:51.784+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.784+0900] {override.py:1858} INFO - Created Permission View: can read on DAG:05_mysql_etl
+[2026-04-13T08:56:51.785+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.785+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:56:51.803+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.803+0900] {dag.py:3234} INFO - Creating ORM DAG for 05_mysql_etl
+[2026-04-13T08:56:51.812+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:56:51.812+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:56:51.838+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.297 seconds
+[2026-04-13T08:57:22.024+0900] {processor.py:186} INFO - Started process (PID=146) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:22.025+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:57:22.027+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:22.027+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:22.054+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:22.070+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:22.070+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:57:22.087+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:22.087+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:57:22.108+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.089 seconds
+[2026-04-13T08:57:52.239+0900] {processor.py:186} INFO - Started process (PID=213) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:52.240+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:57:52.242+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:52.242+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:52.266+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:57:52.283+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:52.282+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:57:52.300+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:57:52.300+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:57:52.314+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.079 seconds
+[2026-04-13T08:58:22.849+0900] {processor.py:186} INFO - Started process (PID=279) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:22.850+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:58:22.853+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:22.852+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:22.883+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:22.901+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:22.901+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:58:22.918+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:22.918+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:58:22.934+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.089 seconds
+[2026-04-13T08:58:53.349+0900] {processor.py:186} INFO - Started process (PID=346) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:53.350+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:58:53.353+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:53.353+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:53.377+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:58:53.394+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:53.394+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:58:53.411+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:58:53.411+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:58:53.425+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.080 seconds
+[2026-04-13T08:59:24.161+0900] {processor.py:186} INFO - Started process (PID=419) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:24.162+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:59:24.165+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:24.165+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:24.196+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:24.216+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:24.215+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:59:24.234+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:24.234+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:59:24.252+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.096 seconds
+[2026-04-13T08:59:54.637+0900] {processor.py:186} INFO - Started process (PID=494) to work on /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:54.638+0900] {processor.py:914} INFO - Processing file /opt/airflow/dags/05_mysql_etl.py for tasks to queue
+[2026-04-13T08:59:54.640+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:54.640+0900] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:54.660+0900] {processor.py:925} INFO - DAG(s) '05_mysql_etl' retrieved from /opt/airflow/dags/05_mysql_etl.py
+[2026-04-13T08:59:54.677+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:54.676+0900] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-04-13T08:59:54.693+0900] {logging_mixin.py:190} INFO - [2026-04-13T08:59:54.693+0900] {dag.py:4138} INFO - Setting next_dagrun for 05_mysql_etl to 2026-04-11 00:00:00+00:00, run_after=2026-04-12 00:00:00+00:00
+[2026-04-13T08:59:54.716+0900] {processor.py:208} INFO - Processing /opt/airflow/dags/05_mysql_etl.py took 0.084 seconds
