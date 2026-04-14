@@ -9,6 +9,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
 import logging
 from airflow.providers.amazon.aws.transfers.local_to_s3 import LocalFilesystemToS3Operator
 from airflow.providers.amazon.aws.hooks.s3 import S3Hook
@@ -17,11 +18,24 @@ from airflow.providers.amazon.aws.hooks.s3 import S3Hook
 # 827913617635 : 루트 계정 ID
 # 리전 : ap-northeast-2
 # 2-1. 버킷명 (iam계정-827913617635-리전-an)
-BUCKET_NAME = "de-ai-16-827913617635-us-east-1-an" # 글로벌하게 고유한 이름 사용!!
+BUCKET_NAME = "de-ai-16-827913617635-ap-northeast-2-an" # 글로벌하게 고유한 이름 사용!!
 # 2-2. 업로드할 파일명 준비
 FILE_NAME   = 'hello.txt' 
 # 2-3. 업로드할 파일의 로컬내 위치 -> 컨테이너 기반
 LOCAL_PATH  = f'/opt/airflow/dags/data/{FILE_NAME}'
+
+def _check_s3(**kwargs):
+    # S3 Hook을 통해서 실제 파일이 존재하는지 확인
+    # 1. S3Hook 생성
+    hook = S3Hook(aws_conn_id='aws_default')
+    # 2. S3Hook을 이용하여 모든 키(객체명, 파일명 등...) 조회
+    keys = hook.list_keys(bucket_name=BUCKET_NAME)
+    # 3 . Key 체크
+    if not keys:
+        raise ValueError("업로드 실패")
+    # 4. 실제로 존재하면 로그 출력
+    for key in keys:
+        logging.info(f"key Info : {key}")
 
 # 3. DAG 정의
 with DAG(
@@ -35,13 +49,24 @@ with DAG(
 ) as dag:
     
     # 4. Task 정의
+    task_create_file  = BashOperator(
+        task_id = "create_file",
+        bash_command = f"echo 'hello airflow & S3 & Yonglim Zzang' > {LOCAL_PATH}"
+    )
+
     task_upload_to_s3 = LocalFilesystemToS3Operator(
-        task_id = "upload_to_s3"
+        task_id     = "upload_to_s3",
+        filename    = LOCAL_PATH,     # 로컬 PC등 원본 리소스의 위치(파일명 포함)
+        dest_key    = FILE_NAME,      # s3 특정 버킷내에 FILE_NAME으로 저장(생성)
+        dest_bucket = BUCKET_NAME,    # 버킷 네임
+        aws_conn_id = 'aws_default',  # AWS 접속 정보
+        replace = True                # 동일 파일이 있으면 덮어쓰기
     )
 
     task_check_s3     = PythonOperator(
-        task_id = "check_s3"
+        task_id = "check_s3",
+        python_callable = _check_s3
     )
 
     #5. 의존성
-    task_upload_to_s3 >> task_check_s3
+    task_create_file >> task_upload_to_s3 >> task_check_s3
